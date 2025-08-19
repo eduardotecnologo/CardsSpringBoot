@@ -21,9 +21,14 @@ public class Musica {
 	@Column(name = "musica_year")// Renomeando "year" pois é uma palavra reservada de SQL
 	private Integer year;
 	private String genre;
-	private String platform;
+	private String platforms;
+	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")// Para a JPA entender que esse texto pode ser acima de 255 caracteres
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	public Musica()
@@ -32,14 +37,15 @@ public class Musica {
 	}
 
 	// Constructor
-	public Musica(Long id, String title, Integer year, String genre, String platform, String imgUrl,
+	public Musica(Long id, String title, Integer year, String genre, String platforms,Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.platform = platform;
+		this.platforms = platforms;
+		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
@@ -77,12 +83,20 @@ public class Musica {
 		this.genre = genre;
 	}
 
-	public String getPlatform() {
-		return platform;
+	public String getPlatforms() {
+		return platforms;
 	}
 
-	public void setPlatform(String platform) {
-		this.platform = platform;
+	public void setPlatform(String platforms) {
+		this.platforms = platforms;
+	}
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
 	public String getImgUrl() {
