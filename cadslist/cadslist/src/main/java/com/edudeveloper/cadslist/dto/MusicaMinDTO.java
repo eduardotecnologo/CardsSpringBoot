@@ -1,0 +1,51 @@
+package com.edudeveloper.cadslist.dto;
+
+import com.edudeveloper.cadslist.entities.Musica;
+
+public class MusicaMinDTO {
+	private Long id;
+	private String title;
+	private Integer year;
+	private String imgUrl;
+	private String shortDescription;
+	
+	public MusicaMinDTO() {
+		
+	}
+	
+	public MusicaMinDTO(Musica entity) {
+		id = entity.getId();
+		title = entity.getTitle();
+		year = entity.getYear();
+		imgUrl = entity.getImgUrl();
+		shortDescription = entity.getShortDescription();
+	}
+
+	/*public MusicaMinDTO(MusicaMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getMusicaYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
+	}*/
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public String getShortDescription() {
+		return shortDescription;
+	}
+}
